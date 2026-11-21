@@ -39,6 +39,9 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          # 确保 Pages 站点已启用（首次部署时 API 配置可能有传播延迟）
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
