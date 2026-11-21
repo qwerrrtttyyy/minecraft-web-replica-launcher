@@ -1,0 +1,130 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --color-brand-50: #eef7ef;
+  --color-brand-100: #d8ecda;
+  --color-brand-200: #b3d9b7;
+  --color-brand-300: #82bd88;
+  --color-brand-400: #529b5b;
+  --color-brand-500: #347d3f;
+  --color-brand-600: #276432;
+  --color-brand-700: #214f2a;
+  --color-brand-800: #1c4024;
+  --color-brand-900: #18361f;
+}
+
+:root {
+  --background: #f6f7f9;
+  --foreground: #191c20;
+  --card: #ffffff;
+  --card-foreground: #191c20;
+  --popover: #ffffff;
+  --popover-foreground: #191c20;
+  --primary: #347d3f;
+  --primary-foreground: #ffffff;
+  --secondary: #eef0f3;
+  --secondary-foreground: #31353b;
+  --muted: #f1f2f4;
+  --muted-foreground: #6b7280;
+  --accent: #eef0f3;
+  --accent-foreground: #191c20;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #347d3f;
+  --radius: 0.75rem;
+  --sidebar: #ffffff;
+  --sidebar-border: #e5e7eb;
+}
+
+.dark {
+  --background: #0e1116;
+  --foreground: #e8eaed;
+  --card: #171b22;
+  --card-foreground: #e8eaed;
+  --popover: #1b2029;
+  --popover-foreground: #e8eaed;
+  --primary: #4caf5c;
+  --primary-foreground: #08130a;
+  --secondary: #222832;
+  --secondary-foreground: #e8eaed;
+  --muted: #1d232c;
+  --muted-foreground: #9aa3b0;
+  --accent: #232a35;
+  --accent-foreground: #e8eaed;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #272e39;
+  --input: #2b323d;
+  --ring: #4caf5c;
+  --sidebar: #12161d;
+  --sidebar-border: #272e39;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-border: var(--sidebar-border);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--muted-foreground) 35%, transparent);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--muted-foreground) 55%, transparent);
+  background-clip: padding-box;
+}
